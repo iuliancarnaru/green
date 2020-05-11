@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ReactComponent as Logo } from "./assets/logo.svg";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const initialFormState = { email: "" };
+  const [formData, setFromData] = useState(initialFormState);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFromData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(`Form submited`, formData);
+    setFromData(initialFormState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="login-container">
+      <Logo className="app-logo" />
+      <h1 className="heading-primary">Example login screen</h1>
+      <p className="heading-cta">Getting started with Green</p>
+      <div className="input-container">
+        <form onSubmit={handleFormSubmit}>
+          <label className="input-label" htmlFor="email">
+            Email address
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            id="email"
+            onChange={handleInputChange}
+          />
+          <div className="checkbox-container">
+            <input type="checkbox" id="remember-device" />
+            <label className="checkbox-label" htmlFor="remember-device">
+              Remember this device
+            </label>
+          </div>
+          <button className="submit-button" type="submit">
+            Sign In
+          </button>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

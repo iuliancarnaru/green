@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+.heading-primary {
+  color: #4c494b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading-cta {
+  color: #c7c6c7;
+  font-weight: 100;
+  font-family: "GothamLight";
+  margin-bottom: 3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 7rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-logo {
+  width: 10rem;
+  height: auto;
+}
+
+.input-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-label {
+  color: #7d7b7c;
+  font-family: "GothamLight";
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkbox-container {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.checkbox-label {
+  margin-left: 1rem;
+  color: #7d7b7c;
+  font-family: "GothamLight";
+  font-size: 1.2rem;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  color: #4c494b;
+}
+
+.submit-button {
+  background: none;
+  border: none;
+  color: #4c494b;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #4c494b;
+  color: #fff;
 }
