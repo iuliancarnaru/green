@@ -1,5 +1,9 @@
 .heading-primary {
   color: #4c494b;
+
+  @media only screen and (max-width: 415px) {
+    font-size: 2.7rem;
+  }
 }
 
 .heading-cta {
@@ -17,6 +21,11 @@
   background-color: #fff;
   padding: 7rem;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+  @media only screen and (max-width: 415px) {
+    padding: 2rem;
+    width: 86%;
+  }
 }
 
 .app-logo {
@@ -54,6 +63,10 @@ input[type="email"] {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   color: #4c494b;
+
+  @media only screen and (max-width: 415px) {
+    width: 93%;
+  }
 }
 
 .submit-button {
@@ -65,9 +78,9 @@ input[type="email"] {
   padding: 1rem 4rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-}
 
-.submit-button:hover {
-  background-color: #4c494b;
-  color: #fff;
+  &:hover {
+    background-color: #4c494b;
+    color: #fff;
+  }
 }

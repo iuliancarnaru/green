@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "./assets/logo.svg";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
-  const initialFormState = { email: "" };
+  const initialFormState = {
+    email: "",
+    rememberDevice: false,
+  };
+
   const [formData, setFromData] = useState(initialFormState);
 
   const handleInputChange = (event) => {
@@ -11,8 +15,13 @@ const App = () => {
     setFromData({ ...formData, [name]: value });
   };
 
+  const toggleCheckbox = () => {
+    setFromData({ ...formData, rememberDevice: !formData.rememberDevice });
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     console.log(`Form submited`, formData);
     setFromData(initialFormState);
   };
@@ -33,14 +42,20 @@ const App = () => {
             value={formData.email}
             id="email"
             onChange={handleInputChange}
+            required
           />
           <div className="checkbox-container">
-            <input type="checkbox" id="remember-device" />
+            <input
+              type="checkbox"
+              id="remember-device"
+              checked={formData.rememberDevice}
+              onChange={toggleCheckbox}
+            />
             <label className="checkbox-label" htmlFor="remember-device">
               Remember this device
             </label>
           </div>
-          <button className="submit-button" type="submit">
+          <button type="submit" className="submit-button">
             Sign In
           </button>
         </form>
