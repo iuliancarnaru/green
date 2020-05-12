@@ -1,0 +1,17 @@
+.checkbox-container {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.input-label-checkbox {
+  margin-left: 2rem;
+  color: #7d7b7c;
+  font-family: "GothamLight";
+  font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 9px;
+  left: 0;
+}
